@@ -1,68 +1,380 @@
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-.share{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: aliceblue;
-    font-weight: bold;
-    font-size: 2rem;
+    body {
+        background: url("project bg (2).png") no-repeat center center fixed;
+        background-size: cover;
+        animation: bgMove 10s ease-in-out infinite alternate;
+        padding: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins;
+    }
+    
+    /* Animate background slowly */
+    @keyframes bgMove {
+        0% {
+            background-position: center center;
+            background-size: 100%;
+        }
+        100% {
+            background-position: center top;
+            background-size: 105%;
+        }
+    }
+    .header{
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
+        color: #ff914d;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+    
+    nav ul li {
+        position: relative; /* Ensure li is the reference for absolute positioning */
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: rgb(249, 249, 249);
+        font-weight: 400;
+        position: relative; /* Needed for the hover effect */
+        display: inline-block;
+        padding: 5px 10px; /* Ensures clickable area */
+    }
+    
+    nav ul li a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Underline effect */
+        background: #E4F9F5;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-in-out;
+        z-index: -1; /* Behind the text */
+        border-radius: 5px; /* Optional: for rounded corners */
+    }
+    
+    nav ul li a:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    
+    nav ul li a:hover {
+        color: #ffffff;
+        transform: scale(1.1);
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        position: fixed; /* Keeps it on top */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(156, 155, 155, );
+    }
+    
+    nav {
+        margin-left: 850px; /* Pushes nav to the right */
+        
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        font-size: 1.0rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+        padding: 5px 10px;
+    }
+    
+    nav ul li a:hover {
+        color: #40514E;
+        border-radius: 5px;
+        transform: scale(1.1);
+    }
+    .projects-container{
+        display: flex;
+    }
+
+    .card {
+        background-color: rgba(30, 42, 51, 0.85); /* dark transparent blue */
+        width: 250px;
+        border-radius: 10px;
+        padding-bottom: 20px;
+        margin: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease;
+        color: #fefefe;
+        height: 300px;
+        font-size: 15px;
+    }
+    #card1 {
+        margin-right: 100px;
+    }
+    #card2 {
+        margin-left: 90px;
+        margin-right: 100px;
+    } 
+    #card3 {
+        margin-left: 100px;
+    }
+
+    .card:hover {
+        box-shadow: 0 0 15px #ff914d;
+        transition: all 0.3s ease;
+        transform: scale(2);
+    }
+
+    .image {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .image img {
+        width: 100%;
+        border-radius: 10px;
+        height: 130px;
+    }
+
+    .content {
+        padding: 10px 15px;
+    }
+
+    .content h2 {
+        font-size: 1.4rem;
+        color: #ffbe76;
+    }
+
+    .content p {
+        font-size: 30pxpx;
+        color: #ddd;
+    }
+
+    .capsules {
+        padding: 5px 20px;
+    }
+
+    .capsules span {
+        border: 1px solid #ffbe76;
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-right: 6px;
+        color: #ffbe76;
+        font-family: 'Poppins', sans-serif;
+    }
+    #card3 .button{
+        margin-top: 21px;
+    }
+    #card1 .button{
+        margin-top: 23px;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    .button button {
+        padding: 7px 15px;
+        border-radius: 20px;
+        background: linear-gradient(to right, #ff914d, #ffbe76);
+        color: #1e2a33;
+        font-size: 11px;
+        margin-top: 10px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .button button:hover {
+        background: linear-gradient(to right, #ffbe76, #ff914d);
+        color: black;
+    }
+    /* Keyframes for animations */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+/* Initial animation for cards */
+.card {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
 
-        * {
-            margin: 0px;
-            padding: 0;
-            box-sizing: border-box;
+/* Animate each card with a slight delay for a staggered effect */
+#card1 {
+    animation-delay: 0.2s;
+}
+#card2 {
+    animation-delay: 0.4s;
+}
+#card3 {
+    animation-delay: 0.6s;
+}
+
+/* Animate capsules */
+.capsules span {
+    opacity: 0;
+    animation: zoomIn 0.5s ease forwards;
+}
+
+/* Stagger capsules too */
+.card .capsules span:nth-child(1) {
+    animation-delay: 0.8s;
+}
+.card .capsules span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+/* Animate heading */
+.card h2 {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 1.2s;
+}
+
+/* Animate paragraph */
+.card p {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 1.4s;
+}
+
+/* Animate button */
+.card .button {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.card {
+    transition: transform 3s ease, box-shadow 2s ease;
+}
+    .card:hover .image img {
+        transform: scale(1.1);
+    }
+
+/* ----------------------- Responsive Design ----------------------- */
+@media screen and (max-width: 768px) {
+    body {
+      padding: 140px 10px 20px;
+      background-image: url("project bg (2).png");
+      background-size: cover; /* ensures background image always fills */
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      animation: none;
+    }
+  
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+      background: rgba(30, 30, 30); /* solid bg to fix overlapping */
+    }
+  
+    nav {
+      margin-left: -24px;
+      width: 100%;
+      position: relative;
         }
-
-        /* Hero Section Styling */
-        .share {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-size: 200% 200%;
-            animation: bgAnimation 15s infinite alternate ease-in-out;
-            color: white;
-            text-align: center;
-        }
-
-        /* H1 Animation */
-        h1 {
-            font-size: 3rem;
-            font-family: 'Poppins', sans-serif;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1.5s ease-out forwards;
-            position: relative;
-            right: 150px;
-            animation-delay: 0.5s; /* Delay for the fade-in effect */
-        }
-
-        /* Background Animation */
-        @keyframes bgAnimation {
-            0% {
-                background-position: left top;
-            }
-            100% {
-                background-position: right bottom;
-            }
-        }
+  
+    nav ul {
+      flex-direction: row;
+      gap: 15px;
+      width: 100%;
+    }
+  
+    nav ul li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .header {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    .projects-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 0px;
+      padding: 0px;
+    }
+  
+    .card {
+      width: 80%;
+      margin: 0px;
+      margin-bottom: 20px;
+      transform: none !important;
+      transition: none !important;
+      z-index: -1;
+    }
+  
+    .card:hover {
+      box-shadow: 0 0 10px #ff914d;
+      transform: 1.2 ;
+    }
+  
+    .image img {
+      height: auto;
+      max-height: 150px;
+    }
+  
+    .button {
+      text-align: center;
+      margin-top: -10px;
+    }
+  }
+  
+    
         
 
-        
-        .share {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url('Hero\ 1.png') no-repeat center center fixed;
-            background-size: cover; /* Ensures the image covers the whole section without distortion */
-            background-position: center;
-            background-attachment: fixed; /* Creates a parallax effect */
-            color: white;
-            text-align: center;
-        }
-        
+
+  
+
+
