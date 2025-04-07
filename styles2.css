@@ -1,0 +1,68 @@
+
+.share{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section Styling */
+        .share {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: 200% 200%;
+            animation: bgAnimation 15s infinite alternate ease-in-out;
+            color: white;
+            text-align: center;
+        }
+
+        /* H1 Animation */
+        h1 {
+            font-size: 3rem;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s ease-out forwards;
+            position: relative;
+            right: 150px;
+            animation-delay: 0.5s; /* Delay for the fade-in effect */
+        }
+
+        /* Background Animation */
+        @keyframes bgAnimation {
+            0% {
+                background-position: left top;
+            }
+            100% {
+                background-position: right bottom;
+            }
+        }
+        
+
+        
+        .share {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('Hero\ 1.png') no-repeat center center fixed;
+            background-size: cover; /* Ensures the image covers the whole section without distortion */
+            background-position: center;
+            background-attachment: fixed; /* Creates a parallax effect */
+            color: white;
+            text-align: center;
+        }
+        
