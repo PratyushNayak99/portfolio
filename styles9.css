@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("project bg (2).png") no-repeat center center fixed;
+  background-size: cover;
+  animation: bgMove 10s ease-in-out infinite alternate;
+  padding: 100px 45px 45px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Animate background slowly */
+@keyframes bgMove {
+  0% { background-position: center center; background-size: 100%; }
+  100% { background-position: center top; background-size: 105%; }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(30, 30, 30, 0.8);
+  z-index: 999;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 5px 10px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #E4F9F5;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+nav ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav ul li a:hover {
+  color: #40514E;
+  transform: scale(1.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+  color: #ff914d;
+}
+
+/* Project Cards */
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(30, 42, 51, 0.85);
+  width: 250px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  color: #fefefe;
+  font-size: 15px;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px #ff914d;
+}
+
+.card .image img {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+
+.card:hover .image img {
+  transform: scale(1.1);
+}
+
+.capsules {
+  padding: 5px 20px;
+}
+
+.capsules span {
+  border: 1px solid #ffbe76;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 6px;
+  color: #ffbe76;
+  font-family: 'Poppins', sans-serif;
+  animation: zoomIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.card .capsules span:nth-child(1) { animation-delay: 0.8s; }
+.card .capsules span:nth-child(2) { animation-delay: 1s; }
+
+.content {
+  padding: 10px 15px;
+}
+
+.content h2 {
+  font-size: 1.4rem;
+  color: #ffbe76;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.content p {
+  font-size: 14px;
+  color: #ddd;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 1.4s;
+}
+
+.button {
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.button button {
+  padding: 7px 15px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #ff914d, #ffbe76);
+  color: #1e2a33;
+  font-size: 11px;
+  margin-top: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button button:hover {
+  background: linear-gradient(to right, #ffbe76, #ff914d);
+  color: black;
+}
+
+.button a {
+  text-decoration: none;
+  color: #1e2a33;
+}
+
+.button a:hover {
+  color: black;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Animation delays per card */
+#card1 { animation-delay: 0.2s; }
+#card2 { animation-delay: 0.4s; }
+#card3 { animation-delay: 0.6s; }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 140px 10px 20px;
+    background-size: cover;
+    animation: none;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .header {
+    margin-top: 30px;
+    font-size: 1.8rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
