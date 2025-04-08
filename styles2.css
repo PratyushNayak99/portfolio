@@ -142,7 +142,7 @@
     .card:hover {
         box-shadow: 0 0 15px #ff914d;
         transition: all 0.3s ease;
-        transform: scale(2);
+        transform: none;
     }
 
     .image {
@@ -192,9 +192,10 @@
 
     .button {
         text-align: center;
+        text-decoration: none;
     }
 
-    .button button {
+    .button button  {
         padding: 7px 15px;
         border-radius: 20px;
         background: linear-gradient(to right, #ff914d, #ffbe76);
@@ -205,9 +206,18 @@
         font-weight: bold;
         cursor: pointer;
         transition: background 0.3s ease;
+        
+    }
+    .button a {
+        text-decoration: none;
+        color: #1e2a33;
     }
 
     .button button:hover {
+        background: linear-gradient(to right, #ffbe76, #ff914d);
+        color: black;
+    }
+    .button a:hover {
         background: linear-gradient(to right, #ffbe76, #ff914d);
         color: black;
     }
